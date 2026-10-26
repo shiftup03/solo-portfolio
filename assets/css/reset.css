@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+/**
+ * Modern Reset CSS
+ * 실무 20년차 기준 최신 웹 표준 및 크로스 브라우징을 고려한 실용적 리셋 스타일시트
+ */
+
+/* 1. 박스 모델 초기화: 모든 요소와 가상 요소의 크기 계산을 border-box로 통일 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. 루트 및 바디 기본 설정 */
+html {
+  -webkit-text-size-adjust: 100%; /* 모바일 가로 전환 시 폰트 크기 강제 확대 방지 */
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, "Malgun Gothic", "맑은 고딕", sans-serif;
+  -webkit-font-smoothing: antialiased; /* macOS/iOS 폰트 렌더링 부드럽게 */
+  -moz-osx-font-smoothing: grayscale;
+  color: #111;
+  background-color: #fff;
+  word-break: keep-all; /* 한글 단어 끊김 방지 (줄바꿈 최적화) */
+  overflow-wrap: break-word; /* 긴 영문/URL 등 레이아웃 깨짐 방지 */
+}
+
+/* 3. 목록 스타일 초기화 */
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+/* 4. 링크 스타일 초기화 */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* 5. 텍스트 강조 및 인용 스타일 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+address,
+em,
+i {
+  font-style: normal;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+/* 6. 미디어 요소 반응형 기본 설정 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 7. 폼 요소 초기화 및 폰트 상속 */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  vertical-align: middle;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+textarea {
+  resize: vertical; /* 가로 늘어남 방지 */
+}
+
+/* 8. 테이블 초기화 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* 9. 접근성 (사용자가 동작 줄이기 설정을 한 경우 애니메이션/트랜지션 억제) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
